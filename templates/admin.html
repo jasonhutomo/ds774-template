@@ -44,10 +44,69 @@
                   class="btn btn-danger btn-sm" name="admin" type="submit" value="Delete" /></form>
             </td>
           </tr>
+          
           {% endfor %}
         </tbody>
-      </table>
 
+      </table>
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+
+            <!-- contact details -->
+
+            <h3>Contact Me</h3>
+            <div class="container-fluid bg-grey">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <p>Please fill in the form below and leave your deatails.</p>
+                        <p><i class="bi bi-geo-fill"></i></span> 10 Garrison Ave, Durham, 03824 US</p>
+                        <p><i class="bi bi-telephone-fill"></i></span> (603) 555-1234</p>
+                        <p><i class="bi bi-envelope-open-fill"></i></span> first.last@unh.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- if we have a message, display -->
+        {% if message %}
+
+        <div class="col-sm">
+            <p> {{ message }} </p>
+        </div>
+
+        <!-- Otherwise, show the contact form -->
+        {% else %}
+        <!-- contact form -->
+        <div class="col-sm">
+            <form method="post" action="">
+                <div class="col-sm">
+                    <div class="row">
+                        <div class="col-sm-6 form-group">
+                            <input class="form-control" id="name" name="fname" placeholder="First Name" type="text"
+                                required>
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <input class="form-control" id="name" name="lname" placeholder="Last Name" type="text"
+                                required>
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <input class="form-control" id="email" name="eaddress" placeholder="Email" type="email"
+                                required>
+                        </div>
+                    </div>
+                    <textarea class="form-control" id="comments" name="message" placeholder="Comment"
+                        rows="5"></textarea><br>
+                    <div class="row">
+                        <div class="col-sm-12 form-group">
+                            <button class="btn btn-info btn-lg" type="submit">Send</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        {% endif %}
       <!-- If user is not logged in, show login form instead -->
       {% else %}
       <!-- Login Form -->
