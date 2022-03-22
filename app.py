@@ -19,6 +19,10 @@ def announcements():
 def directory():
     return render_template('directory.html')
 
+@app.route("/events")
+def events():
+    return render_template('events.html')
+
 @app.route("/courses")
 def courses():
     return render_template('courses.html')
