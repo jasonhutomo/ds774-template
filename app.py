@@ -10,6 +10,10 @@ app.secret_key = "IAN"
 @app.route("/")
 def home():
     return render_template('home.html')
+    
+@app.route("/announcements")
+def home():
+    return render_template('announcements.html')
 
 @app.route("/courses")
 def courses():
