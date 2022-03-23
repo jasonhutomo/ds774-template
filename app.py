@@ -71,6 +71,18 @@ def admin():
             else:
                 error = 'Invalid Username or Password'
         
+        elif request.form.get('issues') == 'Issueslog':
+            fname = request.form['fname']
+            lname = request.form['lname']
+            eaddress = request.form['eaddress']
+            message = request.form['message']
+            result = contact_form(fname, lname, eaddress, message)
+
+            if result:
+                return render_template('contact.html', message='Thank you for your submission')
+            else:
+                return render_template('contact.html', message='Error with submission')
+      
         # if form was logout button, end user session
         elif request.form.get('admin')  == 'Logout':
             session.pop('user_id')
